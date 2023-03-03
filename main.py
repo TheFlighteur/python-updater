@@ -29,3 +29,8 @@ while i < 100:
     i += 1
     sleep(1)
     check_for_update()
+
+    
+v = open("finished.txt", "a")
+v.write(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+v.close()
