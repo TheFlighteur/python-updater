@@ -1,7 +1,8 @@
 import requests
 import pathlib
 from subprocess import Popen
-
+from time import sleep
+i = 0
 version = 1
 currpath = pathlib.Path(__file__).parent.resolve()
 
@@ -12,6 +13,7 @@ def check_version():
 
 def check_for_update():
     if check_version() > version:
+        print("updating script")
         bootstrap_updater()
         Popen("python {}/{}".format(currpath, "updater.py"))
         quit()
@@ -27,3 +29,10 @@ f.write(get("https://raw.githubusercontent.com/TheFlighteur/python-updater/main/
 f.close()
 """)
     f.close()
+
+
+while i < 100:
+    print(i)
+    i += 1
+    sleep(1)
+    check_for_update()
