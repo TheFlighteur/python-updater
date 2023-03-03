@@ -4,7 +4,8 @@ from time import sleep
 from os import remove, path
 
 i = 0
-version = 1
+version = 2
+# updated to version 2
 
 
 def check_version():
@@ -34,6 +35,7 @@ Popen("python main.py")
 
 
 if path.exists("updater.py"):
+    print("deleting updater")
     remove("updater.py")
 while i < 100:
     print(i)
